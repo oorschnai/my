@@ -1,0 +1,34 @@
+extends layout
+
+block content
+    script(src="/scripts/people.js")
+    div#members
+        table
+            tr
+                th Фото
+                th Имя
+                th Денежный запас
+                th Действия
+            for person in people
+                tr
+                    th(style="border: 1px solid black")
+                        img(src=person.img style="width:100%; max-width:200px")
+                    td(contenteditable='false' id='td1'+person.id style="border: 1px solid black") #{person.name}
+                    td(contenteditable='false' id='td2'+person.id style="border: 1px solid black") #{person.money}
+                    th(style="border: 1px solid black")
+                        form(action="/deletePers/" + person.id method="get")
+                            button(onclick="deletePers()" style="background-color: red") del
+                        button(onclick="editPers()" data-arg1=person.id id='button' + person.id style="background-color: white") edit
+
+    div.container#addMemDiv
+        div.addMem.center#addMem
+            button#addMemButton Добавить
+
+    dialog#addMemDia
+        form(action="/addMem/"+people.length method="POST")
+            input(name="name" placeholder="Имя" required)
+            input(type="number" name="money" placeholder="Состояние" required)
+            input(name="photo" placeholder="Фото")
+            button(style="border: 1px solid black")#addMemB Добавить
+
+

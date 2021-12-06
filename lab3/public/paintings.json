@@ -1,0 +1,29 @@
+[
+  {
+    "id": "0",
+    "title": "Американская готика",
+    "painter": "Грант Вуд",
+    "startPrice": "1000000",
+    "minStep": "10000",
+    "maxStep": "123459",
+    "imgName": "https://n1s1.hsmedia.ru/5d/a9/a6/5da9a68e6472927ea07027e1e2900a64/973x1200_0xac120003_13170589181620300229.jpg"
+  },
+  {
+    "id": "1",
+    "title": "Цитрусовый фреш. Апельсины",
+    "painter": "Родригес Хосе",
+    "startPrice": "34500",
+    "minStep": "2000",
+    "maxStep": "15000",
+    "imgName": "https://artworld.ru/images/cms/thumbs/de310e8493b895992859bd3d1772886f838c746e/rodriguez_kartina_maslom_citrusovyj_fresh_apelsiny_jr190515_400_auto_jpg.jpg"
+  },
+  {
+    "id": 2,
+    "title": "Ангелы-милиционеры дезинфицируют Россию",
+    "painter": "Яна Тараканова",
+    "startPrice": "103892",
+    "minStep": "5000",
+    "maxStep": "40000",
+    "imgName": "https://artzip.ru/upload/resize_cache/iblock/a8c/540_1000_0/Angely_militsionery-dezinfitsiruyut-Rossiyu_-kholst_-maslo_-40kh55-sm_-250_.JPG"
+  }
+]

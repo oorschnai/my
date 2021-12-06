@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/layout.css')
+    script(src="../jquery.js")
+  body
+    div.menu
+      form(action="/" method="get")
+        button#images Картины
+      form(action="/people" method="get")
+        button#people Участники
+      form(action="/settings" method="get")
+        button#settings Настройки
+    block content

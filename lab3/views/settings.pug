@@ -1,0 +1,22 @@
+extends layout
+
+block content
+    script(src="/scripts/settings.js")
+    div.container#settingsPage
+        table
+            tr
+                th(style="border: 1px solid black") Дата
+                th(style="border: 1px solid black") Время
+                th(style="border: 1px solid black") Таймаут продажи
+                th(style="border: 1px solid black") Интервал до окнчания
+                th(style="border: 1px solid black") Пауза на изучение
+            tr
+                td(contenteditable='false' style="border: 1px solid black")#td0 #{settings.date}
+                td(contenteditable='false' style="border: 1px solid black")#td1 #{settings.time}
+                td(contenteditable='false' style="border: 1px solid black")#td2 #{settings.timeout}
+                td(contenteditable='false' style="border: 1px solid black")#td3 #{settings.interval}
+                td(contenteditable='false' style="border: 1px solid black")#td4 #{settings.pause}
+
+
+    div.container.editSettings
+        button(onclick="editSettings()" style="float: bottom")#settingsEdit edit

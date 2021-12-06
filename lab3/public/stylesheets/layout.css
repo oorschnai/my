@@ -1,0 +1,123 @@
+#images,
+#people,
+#settings {
+  width: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  font-family: Comic Sans MS, Comic Sans, cursive;
+}
+.menu form {
+  background-color: rgba(22, 71, 255, 0.76);
+  color: rgba(122, 170, 224, 0.7);
+  width: 33.33333%;
+  display: inline-block;
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+  border: 1px solid black;
+  border-spacing: 0;
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+table tr:nth-child(odd) {
+  background-color: #4ebb0e;
+}
+table tr:nth-child(even) {
+  background-color: #86e567;
+}
+.container {
+  padding: 0.01em 16px;
+  display: flex;
+  justify-content: center;
+}
+h1 {
+  font-size: 36px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-family: Comic Sans MS, Comic Sans, cursive;
+  font-weight: 400;
+}
+button {
+  border: none;
+  display: inline-block;
+  padding: 8px 16px;
+  vertical-align: middle;
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  background-color: inherit;
+  text-align: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+html,
+body {
+  font-family: Verdana, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+.left {
+  float: left!important;
+}
+.right {
+  float: right!important;
+}
+.center {
+  text-align: center;
+}
+#imagesPage {
+  background-color: #86e567;
+  padding: 10px;
+}
+#addPainting {
+  background-color: rgba(122, 170, 224, 0.7);
+  margin: 5px;
+}
+#members {
+  background-color: #86e567;
+  padding: 10px;
+}
+#addMemDiv {
+  background-color: #86e567;
+}
+#addMem {
+  background-color: rgba(122, 170, 224, 0.7);
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+#settingsPage {
+  background-color: #86e567;
+  padding: 10px;
+}
+.editSettings {
+  background-color: #86e567;
+}
+#settingsEdit {
+  background-color: rgba(122, 170, 224, 0.7);
+}
+#addImgDia,
+#addMemDia {
+  background-color: rgba(122, 170, 224, 0.7);
+}
+#addImgB {
+  background-color: rgba(22, 71, 255, 0.76);
+  color: rgba(122, 170, 224, 0.7);
+}
+#addMemButton {
+  background-color: rgba(0, 0, 0, 0);
+}
+dialog {
+  position: fixed;
+  left: 0px;
+  top: 50%;
+  z-index: 1;
+}

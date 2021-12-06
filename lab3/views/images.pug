@@ -1,0 +1,41 @@
+extends layout
+
+block content
+    script(src="/scripts/images.js")
+    div#imagesPage
+        table
+            tr
+                th Картина
+                th Название
+                th Художник
+                th Стартовая цена
+                th Мин. шаг
+                th Макс. шаг
+                th Действия
+            for image in images
+                tr
+                    th(style="border: 1px solid black")
+                        img(src=image.imgName style="width:100%")
+                    td(contenteditable='false' id='td1'+image.id style="border: 1px solid black") #{image.title}
+                    td(contenteditable='false' id='td2'+image.id style="border: 1px solid black") #{image.painter}
+                    td(contenteditable='false' id='td3'+image.id style="border: 1px solid black") #{image.startPrice}
+                    td(contenteditable='false' id='td4'+image.id style="border: 1px solid black") #{image.minStep}
+                    td(contenteditable='false' id='td5'+image.id style="border: 1px solid black") #{image.maxStep}
+                    th(style="border: 1px solid black")
+                        form(action="/deleteImg/"+image.id method="get")
+                            button(onclick="deleteImg()" style="background-color: red") del
+                        button(onclick="editImg()" data-arg1=image.id id='button'+image.id style="background-color: white") edit
+
+        div.container.center.addPaintDiv
+            button#addPainting Добавить картину
+
+
+        dialog#addImgDia
+            form(action="/addImg/"+images.length method="POST")
+                input(name="title" placeholder="Название" required)
+                input(name="painter" placeholder="Художник" required)
+                input(name="price" type="number" placeholder="Начальная цена" required)
+                input(name="minStep" type="number" placeholder="Минимальный шаг" min="0" required)
+                input(name="maxStep" type="number" placeholder="Максимальный шаг" min="0" required)
+                input(name="url" placeholder="Изображение" required)
+                button#addImgB Добавить
