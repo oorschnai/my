@@ -1,0 +1,13 @@
+<div>
+  <button class="save" (click)="save()">Save</button>
+</div>
+<div class="scroll-block">
+  <div *ngFor="let s of brokers" class="block">
+    <button class="delete" (click)="remove(s.id)">&#10006;</button>
+    <div class="content-grid">
+      <p>Имя:</p><input type="text" [(ngModel)]="s.name">
+      <p>Деньги:</p><input type="number" [(ngModel)]="s.money">
+    </div>
+  </div>
+  <button class="add" (click)="add()">Add</button>
+</div>

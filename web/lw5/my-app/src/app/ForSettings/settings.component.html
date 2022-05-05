@@ -1,0 +1,11 @@
+<div class="all-content">
+  <button class="save" (click)="save()">Save</button>
+  <div class="block">
+    <p>Старт:</p>
+    <input type="time" [(ngModel)]="settings.start">
+    <p>Конец:</p>
+    <input type="time" [(ngModel)]="settings.end">
+    <p>Интервал:</p>
+    <input type="time" [(ngModel)]="settings.interval">
+  </div>
+</div>

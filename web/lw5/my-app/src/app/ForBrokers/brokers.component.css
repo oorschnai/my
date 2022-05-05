@@ -1,0 +1,80 @@
+.scroll-block{
+  height: 88%;
+  overflow-y: scroll;
+  display: grid;
+  align-items: start;
+  grid-auto-rows: 220px;
+  justify-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.block{
+  margin: 10px;
+  height: 200px;
+  width: 600px;
+  background-color: #aee8e8;
+}
+
+.delete{
+  font-size: 25px;
+  position: relative;
+  top:5%;
+  left:90%;
+  height: 50px;
+  width: 50px;
+}
+
+.add,.save{
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  margin: 0;
+  align-self: center;
+  background-color: #6ae1e1;
+  height: 100px;
+  width: 200px;
+}
+.save{
+  margin-left: 8px;
+  margin-top: 8px;
+}
+
+.delete:hover{
+  background-color: darkgray;
+}
+.delete:active{
+  background-color: gray;
+}
+
+.add:hover{
+  background-color: darkgray;
+}
+.add:active{
+  background-color: gray;
+}
+
+.save:hover{
+  background-color: darkgray;
+}
+.save:active{
+  background-color: gray;
+}
+
+.content-grid{
+  display: grid;
+  align-items: start;
+  justify-items: center;
+  grid-template-columns: 1fr 3fr;
+}
+p{
+  font-family: Arial, sans-serif;
+  font-size: 30px;
+  margin: 0;
+}
+input,select{
+  font-family: Arial, sans-serif;
+  width: 70%;
+  font-size: 25px;
+  margin: 0;
+}
+
+
