@@ -1,0 +1,23 @@
+extends layout
+
+block content
+    script(src="/javascripts/members.js")
+    script(src="/javascripts/socket.js")
+    input(type="hidden" name="name" value=title)#personName
+    input(type="hidden" name="name" value=mem.id)#personId
+    div.w3-container.w3-gray.w3-center
+        h1 Добро пожаловать, #{mem.name}
+        img(src=mem.img width=50 height=50).w3-center
+        h4#money Денежный запас: #{mem.money}
+
+    div(style="height:81vh").w3-container
+        div(style="margin:5px;overflow:scroll;width: 250px; height: 250px;float:left")#currPainting.w3-gray.ui-resizable
+            p Здесь будет актуальная картина с инфой
+        div(style="margin:5px;width: 300px; height: 350px;float:left")#auction.w3-gray.ui-resizable
+            div(hidden="true" style="border: 1px solid black")#timeFromStart
+                p Время:-
+            div(style="overflow:scroll;width: 100%; height: calc(100% - 110px);")#stateAuction
+            input(type="number" name="bet" min=5000 max=6000 step=1000)#spinner
+            button(style="border: 1px solid black" onclick="bet()" disabled)#submitBet.w3-button Подтвердить ставку
+        form(action="/mem/"+mem.id+"/paintings" method="get")
+            button(style="margin:5px;border: 1px solid black").w3-button.w3-gray Купленные картины

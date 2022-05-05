@@ -1,0 +1,15 @@
+extends layout
+
+block content
+    div.w3-container.w3-gray.w3-center
+        h1 Ваши картины
+
+    div(style="height:92vh").w3-container
+        if count == 0
+            p У вас нет картин
+        else
+            //p У вас #{count}
+            div(style="margin:5px;width: 210px; float:left")
+                for i in images
+                    img(src=i.imgName width=200)
+                    p Название:  #{i.title}

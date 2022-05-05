@@ -1,0 +1,16 @@
+[
+  {
+    "id": "0",
+    "name": "Сорочина Мария Витальевна",
+    "login": "oorschnai",
+    "money": "1000000",
+    "img": "/images/anon.png"
+  },
+  {
+    "id": "1",
+    "name": "Эдвард Томас Харди",
+    "login": "tom",
+    "money": "490000000",
+    "img": "/images/tom.png"
+  }
+]

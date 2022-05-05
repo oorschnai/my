@@ -1,0 +1,49 @@
+extends layout
+
+block content
+  script(src = "/javascripts/actions.js")
+  div(class="w3-container w3-center w3-indigo")
+    h1(class="w3-text-amber")= title
+
+  div(class="w3-container")
+    table(class="w3-table-all")
+        tr
+          //th id
+          th Название
+          th Автор
+          th Год выпуска
+          th Наличие
+          th Человек
+          th Ожидаемая дата возврата
+          //th Удаление
+        for b in books
+          tr(id = b.id)
+            //th #{b.id}
+            th
+              a(href = 'book/'+b.id) #{b.bookTitle}
+            th #{b.author}
+            th #{b.year}
+            th #{b.isInLib}
+            th #{b.person}
+            - let rusDate = b.returnDate[8,9] + b.returnDate[4,6] +"-"+ b.returnDate[0,4]
+            th #{b.returnDate}
+            //th -
+          //- id++;
+
+  div(class="w3-container w3-center w3-amber")
+    div(class="w3-col s4")
+      button(class="w3-button w3-text-indigo" onclick="allBooks(this)" id="all") Все книги библиотеки
+    div(class="w3-col s4")
+      button(class="w3-button w3-text-indigo" onclick="inLib(this)" id="inLibrary") В наличии
+    div(class="w3-col s4 ")
+      button(class="w3-button w3-text-indigo" onclick="returnDate(this)" id="date") Возврат просрочен
+
+  div(class="w3-center w3-indigo")
+    button(class="w3-button w3-text-amber" onclick="addBookButton()" id="add") Добавить книгу
+
+  dialog(class="w3-indigo" id="addDia" )
+    form(action="/addBook/"+books.length method="POST" )
+        input(name="title" placeholder="Название" required)
+        input(name="author" placeholder="Автор" required)
+        input(name="year" type="date" required)
+        button(class="w3-button w3-text-amber sb" onclick="" id="acceptAdd") Подтвердить

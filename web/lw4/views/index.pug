@@ -1,0 +1,8 @@
+extends layout
+
+block content
+  div(style="height: 100vh").w3-container.loginEnter
+    h2.w3-center Login page
+    form(action="/enterLogin" method="get").w3-center
+      input(type="text" name="login" required)#loginInput
+      button(class="w3-button" onclick="").w3-gray.w3-button#submitName Войти

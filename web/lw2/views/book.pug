@@ -1,0 +1,58 @@
+extends layout
+
+block content
+    script(src = "/javascripts/actions.js")
+
+    div(class="w3-container w3-center w3-indigo")
+        form(action="/" method="GET")
+            button(class="w3-button w3-left w3-text-amber") <-Назад
+        h1(class="w3-text-amber")= title
+
+    div(class="w3-container")
+        table(class="w3-table-all" id="tableId")
+            tr
+                th id
+                th Название
+                th Автор
+                th Год выпуска
+                th Наличие
+                th Человек
+                th Ожидаемая дата возврата
+            tr
+                td(id="bookId") #{book.id}
+                td(id="title") #{book.bookTitle}
+                td(id="author") #{book.author}
+                td(id="year") #{book.year}
+                td(id="isIn") #{book.isInLib}
+                td #{book.person}
+                td #{book.returnDate}
+
+    div(class="w3-container w3-indigo")
+        div(class="w3-col s3 w3-indigo")
+            form(action="/book/delete/"+book.id method="GET")
+                button(class="w3-button w3-text-amber" id="delete") Удалить
+        div(class="w3-col s3 w3-indigo")
+            button(class="w3-button w3-text-amber" onclick="changeButton()" id="change") Изменить
+        div(class="w3-col s3 w3-indigo")
+            button(class="w3-button w3-text-amber" onclick="takeButton()" id="take") Взять
+        div(class="w3-col s3 w3-indigo")
+            form(action="/returnBook/"+book.id method="POST")
+                button(class="w3-button w3-text-amber retButton" onclick="retButton()"  id="return") Вернуть
+
+
+
+    dialog(class="w3-indigo" id="changeDia" )
+        form(action="/book/changeInfo/"+book.id method="POST" )
+            input(name="titleChange" value=book.bookTitle required)
+            input(name="authorChange" value=book.author required)
+            input(name="yearChange" value=book.year required)
+            button(class="w3-button w3-text-amber sb" onclick="" id="acceptChange") Подтвердить
+
+    - let today = new Date()
+    - today = today.getFullYear()+"-"+today.getMonth()+'-'+today.getDate();
+    - console.log("today ", today)
+    dialog(class="w3-indigo" id="takeDia" )
+        form(action="/takeBook/"+book.id method="POST" )
+            input(name="person" placeholder="Имя" required)
+            input(name="date" type="date" min='${today}' required)
+            button(class="w3-button w3-text-amber sb" onclick="" id="acceptTake") Подтвердить

@@ -1,0 +1,36 @@
+extends layout
+
+block content
+    script(src="/javascripts/admin.js")
+    script(src="/javascripts/socket.js")
+    //script(src="bundle.js")
+    input(type="hidden" name="name" value=title)#personName
+    div.w3-container.w3-gray.w3-center
+        h1 Добро пожаловать, admin
+
+    div(style="height:92vh").w3-container
+        div(style="margin:5px;overflow:scroll;width: 250px; height: 300px;float:left")#admAllPaintings.w3-gray.ui-resizable
+            h3 Все картины:
+            for i in paintings
+                img(src=i.imgName width=150)
+                p Название: #{i.title}
+                p Художник: #{i.painter}
+                p Мин. цена: #{i.startPrice}
+                p Владелец: #{i.owner}
+                p Цена: #{i.endPrice}
+        div(style="margin:5px;overflow:scroll;width: 250px; height: 250px;float:left")#currPainting.w3-gray.ui-resizable
+            p Здесь будет актуальная картина с инфой
+        div(style="margin:5px;overflow:scroll;width: 300px; height: 350px;float:left")#stateAuction.w3-gray.ui-resizable
+        div(style="margin:5px;border: 1px solid black;float:left;max-width:350").w3-gray
+            h4 Все возможные участники
+            for i in members
+                p #{i.id}. #{i.name}
+
+        div(style="margin:5px;border: 1px solid black;float:left;max-width:350")#settingsInfo.w3-gray
+            h4 Установленные настройки аукциона:
+            p Пауза на изучение: #{settings[0].pause} сек
+            p Таймаут продажи: #{settings[0].timeout} сек
+            p Интервал до окончания торга: #{settings[0].interval} сек
+
+        div(style="float:left")
+            button(style="margin:5px" onclick="start()")#startAuct Начать аукцион

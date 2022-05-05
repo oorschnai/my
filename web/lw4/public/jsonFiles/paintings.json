@@ -1,0 +1,26 @@
+[
+  {
+    "id": "0",
+    "title": "Полилог",
+    "painter": "Колистратов Дмитрий",
+    "startPrice": "110000",
+    "minStep": "5000",
+    "maxStep": "15000",
+    "imgName": "/images/1.png",
+    "owner": "-",
+    "endPrice": "-",
+    "currPrice": "110000"
+  },
+  {
+    "id": "1",
+    "title": "Дастархан",
+    "painter": "Атаханов Азам",
+    "startPrice": "840000",
+    "minStep": "5000",
+    "maxStep": "100000",
+    "imgName": "/images/2.png",
+    "owner": "-",
+    "endPrice": "-",
+    "currPrice": "840000"
+  }
+]
